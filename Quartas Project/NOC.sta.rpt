@@ -1,0 +1,1357 @@
+TimeQuest Timing Analyzer report for NOC
+Fri May 04 12:21:53 2012
+Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Minimum Pulse Width: 'clk'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++--------------------+-----------------------------------------------------------------+
+; Quartus II Version ; Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition ;
+; Revision Name      ; NOC                                                             ;
+; Device Family      ; Cyclone II                                                      ;
+; Device Name        ; EP2C70F896C6                                                    ;
+; Timing Models      ; Final                                                           ;
+; Delay Model        ; Combined                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                     ;
++--------------------+-----------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++------------------------------------------------+
+; Slow Model Fmax Summary                        ;
++----------+-----------------+------------+------+
+; Fmax     ; Restricted Fmax ; Clock Name ; Note ;
++----------+-----------------+------------+------+
+; 81.3 MHz ; 81.3 MHz        ; clk        ;      ;
++----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; -11.300 ; -46285.280    ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -7797.380             ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                                         ;
++---------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                                      ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.300 ; write_buffer_reg[2]                                            ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.055      ; 12.391     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -11.050 ; write_buffer_reg[1]                                            ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 12.133     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.909 ; write_buffer_reg[0]                                            ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 11.992     ;
+; -10.628 ; node:router7_inst|router:router_inst|bus_array_out[4][43]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 11.660     ;
+; -10.586 ; node:router7_inst|router:router_inst|bus_array_out[4][42]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.007     ; 11.615     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.466 ; write_buffer_reg[3]                                            ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.046      ; 11.548     ;
+; -10.462 ; node:router7_inst|router:router_inst|bus_array_out[4][43]      ; node:router6_inst|router:router_inst|bus_array_out[2][7]       ; clk          ; clk         ; 1.000        ; -0.013     ; 11.485     ;
+; -10.432 ; node:router7_inst|router:router_inst|bus_array_out[4][43]      ; node:router6_inst|router:router_inst|bus_array_out[3][44]      ; clk          ; clk         ; 1.000        ; -0.014     ; 11.454     ;
+; -10.422 ; node:router7_inst|router:router_inst|bus_array_out[4][46]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.016     ; 11.442     ;
+; -10.420 ; node:router7_inst|router:router_inst|bus_array_out[4][42]      ; node:router6_inst|router:router_inst|bus_array_out[2][7]       ; clk          ; clk         ; 1.000        ; -0.016     ; 11.440     ;
+; -10.390 ; node:router7_inst|router:router_inst|bus_array_out[4][42]      ; node:router6_inst|router:router_inst|bus_array_out[3][44]      ; clk          ; clk         ; 1.000        ; -0.017     ; 11.409     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.361 ; traffic_counter[0][90][6]                                      ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.034      ; 11.431     ;
+; -10.344 ; node:router3_inst|router:router_inst|bus_array_out[4][41]      ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.047     ; 11.333     ;
+; -10.337 ; node:router7_inst|router:router_inst|bus_array_out[4][44]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 11.369     ;
+; -10.329 ; node:router7_inst|router:router_inst|bus_array_out[4][40]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.007     ; 11.358     ;
+; -10.323 ; node:router7_inst|router:router_inst|bus_array_out[4][43]      ; node:router6_inst|router:router_inst|bus_array_out[2][42]      ; clk          ; clk         ; 1.000        ; -0.013     ; 11.346     ;
+; -10.323 ; node:router5_inst|router:router_inst|bus_array_out[2][47]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.030      ; 11.389     ;
+; -10.321 ; node:router_slave_inst|router:router_inst|bus_array_out[1][43] ; node:uart_slave_inst|router:router_inst|bus_array_out[2][40]   ; clk          ; clk         ; 1.000        ; 0.041      ; 11.398     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.308 ; traffic_counter[1][39][7]                                      ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; -0.026     ; 11.318     ;
+; -10.305 ; node:router_slave_inst|router:router_inst|bus_array_out[1][47] ; node:uart_slave_inst|router:router_inst|bus_array_out[2][40]   ; clk          ; clk         ; 1.000        ; 0.025      ; 11.366     ;
+; -10.302 ; node:router6_inst|router:router_inst|buffer_level1_used[2]     ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.016     ; 11.322     ;
+; -10.293 ; node:router3_inst|router:router_inst|bus_array_out[4][41]      ; node:router_slave_inst|router:router_inst|bus_array_out[0][35] ; clk          ; clk         ; 1.000        ; -0.037     ; 11.292     ;
+; -10.289 ; node:router_slave_inst|router:router_inst|bus_array_out[3][43] ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.007     ; 11.318     ;
+; -10.281 ; node:router7_inst|router:router_inst|bus_array_out[4][42]      ; node:router6_inst|router:router_inst|bus_array_out[2][42]      ; clk          ; clk         ; 1.000        ; -0.016     ; 11.301     ;
+; -10.270 ; node:router3_inst|router:router_inst|bus_array_out[4][41]      ; node:router_slave_inst|router:router_inst|bus_array_out[2][46] ; clk          ; clk         ; 1.000        ; 0.005      ; 11.311     ;
+; -10.263 ; node:router7_inst|router:router_inst|bus_array_out[4][43]      ; node:router6_inst|router:router_inst|bus_array_out[3][1]       ; clk          ; clk         ; 1.000        ; -0.014     ; 11.285     ;
+; -10.256 ; node:router7_inst|router:router_inst|bus_array_out[4][46]      ; node:router6_inst|router:router_inst|bus_array_out[2][7]       ; clk          ; clk         ; 1.000        ; -0.025     ; 11.267     ;
+; -10.252 ; node:router3_inst|router:router_inst|bus_array_out[4][41]      ; node:router_slave_inst|router:router_inst|bus_array_out[2][28] ; clk          ; clk         ; 1.000        ; -0.026     ; 11.262     ;
+; -10.252 ; node:router_slave_inst|router:router_inst|bus_array_out[3][47] ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.005     ; 11.283     ;
+; -10.246 ; node:router6_inst|router:router_inst|buffer_level1[3][43]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.001     ; 11.281     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.240 ; traffic_counter[1][42][3]                                      ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; -0.015     ; 11.261     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.236 ; traffic_counter[0][50][2]                                      ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.057      ; 11.329     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; traffic_counter[0][80][6]                                      ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.017      ; 11.285     ;
+; -10.232 ; node:router_slave_inst|router:router_inst|bus_array_out[3][41] ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.003      ; 11.271     ;
+; -10.226 ; node:router7_inst|router:router_inst|bus_array_out[4][46]      ; node:router6_inst|router:router_inst|bus_array_out[3][44]      ; clk          ; clk         ; 1.000        ; -0.026     ; 11.236     ;
+; -10.221 ; node:router7_inst|router:router_inst|bus_array_out[4][42]      ; node:router6_inst|router:router_inst|bus_array_out[3][1]       ; clk          ; clk         ; 1.000        ; -0.017     ; 11.240     ;
+; -10.208 ; node:router3_inst|router:router_inst|bus_array_out[4][41]      ; node:router_slave_inst|router:router_inst|bus_array_out[2][29] ; clk          ; clk         ; 1.000        ; -0.024     ; 11.220     ;
++---------+----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                          ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                       ; To Node                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; current_counter[0]                                              ; current_counter[0]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; sc_uart:uart2|rd_data[0]                                        ; sc_uart:uart2|rd_data[0]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state_reg.POLL_STATE                                            ; state_reg.POLL_STATE                                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1|f                      ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1|f                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level1_used[0]     ; node:router12_inst|router:router_inst|buffer_level1_used[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level1_used[0]      ; node:router2_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level1_used[4]     ; node:router12_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level1_used[4]      ; node:router8_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level1_used[2]     ; node:router10_inst|router:router_inst|buffer_level1_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router11_inst|router:router_inst|buffer_level1_used[4]     ; node:router11_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level1_used[2]      ; node:router7_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router11_inst|router:router_inst|buffer_level1_used[2]     ; node:router11_inst|router:router_inst|buffer_level1_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level1_used[0]      ; node:router6_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router_slave_inst|router:router_inst|buffer_level1_used[0] ; node:router_slave_inst|router:router_inst|buffer_level1_used[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[4]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level1_used[4]      ; node:router6_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level1_used[4]     ; node:router10_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level1_used[4]      ; node:router7_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level1_used[4]      ; node:router3_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router4_inst|router:router_inst|buffer_level1_used[4]      ; node:router4_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level1_used[4]      ; node:router2_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level1_used[3]      ; node:router1_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level1_used[3]      ; node:router3_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level1_used[1]     ; node:router10_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level1_used[2]      ; node:router3_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[2]   ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router9_inst|router:router_inst|buffer_level1_used[2]      ; node:router9_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level1_used[3]      ; node:router8_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level1_used[1]      ; node:router7_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level1_used[3]      ; node:router5_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level1_used[2]      ; node:router1_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level2_used[0]     ; node:router12_inst|router:router_inst|buffer_level2_used[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[0]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router9_inst|router:router_inst|buffer_level1_used[0]      ; node:router9_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level1_used[3]      ; node:router7_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router4_inst|router:router_inst|buffer_level1_used[3]      ; node:router4_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level1_used[1]     ; node:router12_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level1_used[2]      ; node:router5_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level1_used[1]      ; node:router8_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level1_used[3]      ; node:router2_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level1_used[4]      ; node:router1_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[2]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level1_used[1]      ; node:router5_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level1_used[1]      ; node:router3_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level1_used[1]      ; node:router6_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router4_inst|router:router_inst|buffer_level1_used[1]      ; node:router4_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:node_master_inst|router:router_inst|buffer_level1_used[2]  ; node:node_master_inst|router:router_inst|buffer_level1_used[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router9_inst|router:router_inst|buffer_level1_used[1]      ; node:router9_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router_slave_inst|router:router_inst|buffer_level1_used[1] ; node:router_slave_inst|router:router_inst|buffer_level1_used[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:node_master_inst|router:router_inst|buffer_level1_used[3]  ; node:node_master_inst|router:router_inst|buffer_level1_used[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1|f                      ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1|f                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level2_used[0]      ; node:router2_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level1_used[0]      ; node:router5_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:node_master_inst|router:router_inst|buffer_level1_used[0]  ; node:node_master_inst|router:router_inst|buffer_level1_used[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router11_inst|router:router_inst|buffer_level1_used[1]     ; node:router11_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level2_used[4]     ; node:router12_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level2_used[4]      ; node:router8_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level2_used[2]     ; node:router10_inst|router:router_inst|buffer_level2_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router11_inst|router:router_inst|buffer_level2_used[4]     ; node:router11_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[1]   ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level2_used[2]      ; node:router7_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router11_inst|router:router_inst|buffer_level2_used[2]     ; node:router11_inst|router:router_inst|buffer_level2_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level2_used[0]      ; node:router6_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router_slave_inst|router:router_inst|buffer_level2_used[0] ; node:router_slave_inst|router:router_inst|buffer_level2_used[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[4]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level2_used[4]      ; node:router6_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level2_used[4]     ; node:router10_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router_slave_inst|router:router_inst|buffer_level2_used[4] ; node:router_slave_inst|router:router_inst|buffer_level2_used[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level2_used[2]      ; node:router6_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level2_used[4]      ; node:router7_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router_slave_inst|router:router_inst|buffer_level2_used[2] ; node:router_slave_inst|router:router_inst|buffer_level2_used[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level2_used[4]      ; node:router3_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router4_inst|router:router_inst|buffer_level2_used[4]      ; node:router4_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level2_used[4]      ; node:router2_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level2_used[3]      ; node:router1_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level2_used[3]      ; node:router3_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router10_inst|router:router_inst|buffer_level2_used[1]     ; node:router10_inst|router:router_inst|buffer_level2_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level2_used[3]      ; node:router6_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level2_used[2]      ; node:router3_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[2]   ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router9_inst|router:router_inst|buffer_level2_used[2]      ; node:router9_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level2_used[3]      ; node:router8_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level2_used[1]      ; node:router7_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[3]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level2_used[3]      ; node:router5_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level2_used[2]      ; node:router1_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[0]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router9_inst|router:router_inst|buffer_level2_used[0]      ; node:router9_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router7_inst|router:router_inst|buffer_level2_used[3]      ; node:router7_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router4_inst|router:router_inst|buffer_level2_used[3]      ; node:router4_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router12_inst|router:router_inst|buffer_level2_used[1]     ; node:router12_inst|router:router_inst|buffer_level2_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level2_used[2]      ; node:router5_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router8_inst|router:router_inst|buffer_level2_used[1]      ; node:router8_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router2_inst|router:router_inst|buffer_level2_used[3]      ; node:router2_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router1_inst|router:router_inst|buffer_level2_used[4]      ; node:router1_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[2]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[3]   ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router5_inst|router:router_inst|buffer_level2_used[1]      ; node:router5_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router3_inst|router:router_inst|buffer_level2_used[1]      ; node:router3_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; node:router6_inst|router:router_inst|buffer_level2_used[1]      ; node:router6_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[0]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[0]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[10]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[10]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[11]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[11]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[12]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[12]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[13]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[13]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[14]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[14]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[15]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[15]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[16]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[16]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[17]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[17]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[18]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[18]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[19]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[19]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[1]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[1]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[20]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[20]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[21]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[21]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[22]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[22]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[23]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[23]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[24]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[24]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[2]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[2]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[3]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[3]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[4]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[4]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[5]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[5]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[6]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[6]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[7]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[7]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[8]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[8]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[9]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[9]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_counter[0]                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_counter[0]                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|read_return          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|read_return          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][6] ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; nreset       ; clk        ; 8.750 ; 8.750 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; 5.166 ; 5.166 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; 4.444 ; 4.444 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; 4.456 ; 4.456 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; 4.860 ; 4.860 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; 4.466 ; 4.466 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; 4.831 ; 4.831 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; 4.936 ; 4.936 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; 5.166 ; 5.166 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; 4.924 ; 4.924 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; nreset       ; clk        ; -3.588 ; -3.588 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; -4.214 ; -4.214 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; -4.214 ; -4.214 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; -4.226 ; -4.226 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; -4.630 ; -4.630 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; -4.236 ; -4.236 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; -4.601 ; -4.601 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; -4.706 ; -4.706 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; -4.936 ; -4.936 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; -4.694 ; -4.694 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led[*]    ; clk        ; 9.414  ; 9.414  ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 8.635  ; 8.635  ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.927  ; 8.927  ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 9.166  ; 9.166  ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.954  ; 8.954  ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 9.090  ; 9.090  ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 9.210  ; 9.210  ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 9.414  ; 9.414  ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.516  ; 8.516  ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 11.815 ; 11.815 ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 9.736  ; 9.736  ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 9.483  ; 9.483  ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 8.345  ; 8.345  ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 11.813 ; 11.813 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 9.622  ; 9.622  ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 10.477 ; 10.477 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 9.517  ; 9.517  ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 11.815 ; 11.815 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 9.353  ; 9.353  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led[*]    ; clk        ; 8.516  ; 8.516  ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 8.635  ; 8.635  ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.927  ; 8.927  ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 9.166  ; 9.166  ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.954  ; 8.954  ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 9.090  ; 9.090  ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 9.210  ; 9.210  ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 9.414  ; 9.414  ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.516  ; 8.516  ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 8.345  ; 8.345  ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 9.736  ; 9.736  ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 9.483  ; 9.483  ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 8.345  ; 8.345  ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 11.813 ; 11.813 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 9.622  ; 9.622  ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 10.477 ; 10.477 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 9.517  ; 9.517  ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 11.815 ; 11.815 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 9.353  ; 9.353  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------+
+; Propagation Delay                                      ;
++-------------+--------------+--------+----+----+--------+
+; Input Port  ; Output Port  ; RR     ; RF ; FR ; FF     ;
++-------------+--------------+--------+----+----+--------+
+; switches[0] ; test_ledr[0] ; 10.012 ;    ;    ; 10.012 ;
+; switches[1] ; test_ledr[1] ; 10.095 ;    ;    ; 10.095 ;
+; switches[2] ; test_ledr[2] ; 10.267 ;    ;    ; 10.267 ;
+; switches[3] ; test_ledr[3] ; 10.143 ;    ;    ; 10.143 ;
+; switches[4] ; test_ledr[4] ; 11.167 ;    ;    ; 11.167 ;
+; switches[5] ; test_ledr[5] ; 11.202 ;    ;    ; 11.202 ;
+; switches[6] ; test_ledr[6] ; 10.146 ;    ;    ; 10.146 ;
+; switches[7] ; test_ledr[7] ; 10.146 ;    ;    ; 10.146 ;
++-------------+--------------+--------+----+----+--------+
+
+
++--------------------------------------------------------+
+; Minimum Propagation Delay                              ;
++-------------+--------------+--------+----+----+--------+
+; Input Port  ; Output Port  ; RR     ; RF ; FR ; FF     ;
++-------------+--------------+--------+----+----+--------+
+; switches[0] ; test_ledr[0] ; 10.012 ;    ;    ; 10.012 ;
+; switches[1] ; test_ledr[1] ; 10.095 ;    ;    ; 10.095 ;
+; switches[2] ; test_ledr[2] ; 10.267 ;    ;    ; 10.267 ;
+; switches[3] ; test_ledr[3] ; 10.143 ;    ;    ; 10.143 ;
+; switches[4] ; test_ledr[4] ; 11.167 ;    ;    ; 11.167 ;
+; switches[5] ; test_ledr[5] ; 11.202 ;    ;    ; 11.202 ;
+; switches[6] ; test_ledr[6] ; 10.146 ;    ;    ; 10.146 ;
+; switches[7] ; test_ledr[7] ; 10.146 ;    ;    ; 10.146 ;
++-------------+--------------+--------+----+----+--------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.626 ; -17300.781    ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -7797.380             ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                                         ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                       ; To Node                                                        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.626 ; write_buffer_reg[2]                                             ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.056      ; 5.714      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.619 ; write_buffer_reg[1]                                             ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.696      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.445 ; write_buffer_reg[0]                                             ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.045      ; 5.522      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.228 ; write_buffer_reg[3]                                             ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.047      ; 5.307      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.222 ; traffic_counter[0][90][6]                                       ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.039      ; 5.293      ;
+; -4.215 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.196      ;
+; -4.197 ; node:router7_inst|router:router_inst|bus_array_out[4][43]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 5.225      ;
+; -4.180 ; node:router7_inst|router:router_inst|bus_array_out[4][42]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 5.208      ;
+; -4.159 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[0][35] ; clk          ; clk         ; 1.000        ; -0.042     ; 5.149      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.155 ; traffic_counter[0][80][6]                                       ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; 0.018      ; 5.205      ;
+; -4.148 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][28] ; clk          ; clk         ; 1.000        ; -0.030     ; 5.150      ;
+; -4.147 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][0]  ; clk          ; clk         ; 1.000        ; -0.040     ; 5.139      ;
+; -4.143 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][46] ; clk          ; clk         ; 1.000        ; 0.002      ; 5.177      ;
+; -4.125 ; node:router_slave_inst|router:router_inst|bus_array_out[3][43]  ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.001     ; 5.156      ;
+; -4.123 ; node:router7_inst|router:router_inst|bus_array_out[4][46]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.014     ; 5.141      ;
+; -4.114 ; node:router3_inst|router:router_inst|bus_array_out[4][48]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.044     ; 5.102      ;
+; -4.111 ; node:router7_inst|router:router_inst|bus_array_out[4][43]       ; node:router6_inst|router:router_inst|bus_array_out[3][44]      ; clk          ; clk         ; 1.000        ; -0.013     ; 5.130      ;
+; -4.105 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][29] ; clk          ; clk         ; 1.000        ; -0.028     ; 5.109      ;
+; -4.102 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][29] ; clk          ; clk         ; 1.000        ; -0.028     ; 5.106      ;
+; -4.102 ; node:router3_inst|router:router_inst|bus_array_out[4][40]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.083      ;
+; -4.100 ; node:router6_inst|router:router_inst|bus_array_out[1][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; 0.008      ; 5.140      ;
+; -4.094 ; node:router7_inst|router:router_inst|bus_array_out[4][42]       ; node:router6_inst|router:router_inst|bus_array_out[3][44]      ; clk          ; clk         ; 1.000        ; -0.013     ; 5.113      ;
+; -4.089 ; node:router_slave_inst|router:router_inst|bus_array_out[3][41]  ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.007      ; 5.128      ;
+; -4.088 ; node:router7_inst|router:router_inst|bus_array_out[4][40]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 5.116      ;
+; -4.084 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][2]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.065      ;
+; -4.081 ; node:router7_inst|router:router_inst|bus_array_out[4][43]       ; node:router6_inst|router:router_inst|bus_array_out[2][7]       ; clk          ; clk         ; 1.000        ; -0.012     ; 5.101      ;
+; -4.081 ; node:router_slave_inst|router:router_inst|bus_array_out[3][47]  ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.000      ; 5.113      ;
+; -4.080 ; node:router3_inst|router:router_inst|bus_array_out[4][42]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.061      ;
+; -4.077 ; node:router5_inst|router:router_inst|bus_array_out[2][47]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.031      ; 5.140      ;
+; -4.076 ; node:router_slave_inst|router:router_inst|buffer_level1_used[1] ; node:router_slave_inst|router:router_inst|bus_array_out[3][43] ; clk          ; clk         ; 1.000        ; 0.007      ; 5.115      ;
+; -4.072 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][43] ; clk          ; clk         ; 1.000        ; -0.032     ; 5.072      ;
+; -4.069 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][42] ; clk          ; clk         ; 1.000        ; -0.032     ; 5.069      ;
+; -4.069 ; node:router7_inst|router:router_inst|bus_array_out[4][44]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.004     ; 5.097      ;
+; -4.068 ; node:router6_inst|router:router_inst|bus_array_out[1][46]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.019     ; 5.081      ;
+; -4.066 ; node:router6_inst|router:router_inst|buffer_level1_used[2]      ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.016     ; 5.082      ;
+; -4.065 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][3]  ; clk          ; clk         ; 1.000        ; -0.040     ; 5.057      ;
+; -4.064 ; node:router7_inst|router:router_inst|bus_array_out[4][42]       ; node:router6_inst|router:router_inst|bus_array_out[2][7]       ; clk          ; clk         ; 1.000        ; -0.012     ; 5.084      ;
+; -4.063 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[1][5]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.044      ;
+; -4.063 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[4][3]  ; clk          ; clk         ; 1.000        ; -0.040     ; 5.055      ;
+; -4.060 ; node:router6_inst|router:router_inst|bus_array_out[1][42]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; 0.008      ; 5.100      ;
+; -4.058 ; node:router3_inst|router:router_inst|bus_array_out[4][48]       ; node:router_slave_inst|router:router_inst|bus_array_out[0][35] ; clk          ; clk         ; 1.000        ; -0.035     ; 5.055      ;
+; -4.056 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][33] ; clk          ; clk         ; 1.000        ; -0.031     ; 5.057      ;
+; -4.052 ; node:router3_inst|router:router_inst|bus_array_out[4][47]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][4]  ; clk          ; clk         ; 1.000        ; -0.051     ; 5.033      ;
+; -4.051 ; node:router_slave_inst|router:router_inst|bus_array_out[3][45]  ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; 0.001      ; 5.084      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[0]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[1]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[2]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[3]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[4]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[5]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[6]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.050 ; traffic_counter[1][39][7]                                       ; numberreg[7]                                                   ; clk          ; clk         ; 1.000        ; -0.022     ; 5.060      ;
+; -4.049 ; node:router6_inst|router:router_inst|buffer_level1[3][43]       ; node:router6_inst|router:router_inst|bus_array_out[2][47]      ; clk          ; clk         ; 1.000        ; -0.001     ; 5.080      ;
+; -4.047 ; node:router3_inst|router:router_inst|bus_array_out[4][48]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][28] ; clk          ; clk         ; 1.000        ; -0.023     ; 5.056      ;
+; -4.046 ; node:router3_inst|router:router_inst|bus_array_out[4][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[2][30] ; clk          ; clk         ; 1.000        ; -0.031     ; 5.047      ;
+; -4.046 ; node:router3_inst|router:router_inst|bus_array_out[4][40]       ; node:router_slave_inst|router:router_inst|bus_array_out[0][35] ; clk          ; clk         ; 1.000        ; -0.042     ; 5.036      ;
+; -4.046 ; node:router3_inst|router:router_inst|bus_array_out[4][48]       ; node:router_slave_inst|router:router_inst|bus_array_out[3][0]  ; clk          ; clk         ; 1.000        ; -0.033     ; 5.045      ;
+; -4.044 ; node:router6_inst|router:router_inst|bus_array_out[1][41]       ; node:router_slave_inst|router:router_inst|bus_array_out[0][35] ; clk          ; clk         ; 1.000        ; 0.017      ; 5.093      ;
++--------+-----------------------------------------------------------------+----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                          ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                       ; To Node                                                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; current_counter[0]                                              ; current_counter[0]                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; sc_uart:uart2|rd_data[0]                                        ; sc_uart:uart2|rd_data[0]                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state_reg.POLL_STATE                                            ; state_reg.POLL_STATE                                            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1|f                      ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1|f                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level1_used[0]     ; node:router12_inst|router:router_inst|buffer_level1_used[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level1_used[0]      ; node:router2_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level1_used[4]     ; node:router12_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level1_used[4]      ; node:router8_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level1_used[2]     ; node:router10_inst|router:router_inst|buffer_level1_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router11_inst|router:router_inst|buffer_level1_used[4]     ; node:router11_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level1_used[2]      ; node:router7_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router11_inst|router:router_inst|buffer_level1_used[2]     ; node:router11_inst|router:router_inst|buffer_level1_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level1_used[0]      ; node:router6_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router_slave_inst|router:router_inst|buffer_level1_used[0] ; node:router_slave_inst|router:router_inst|buffer_level1_used[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[4]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level1_used[4]      ; node:router6_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level1_used[4]     ; node:router10_inst|router:router_inst|buffer_level1_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level1_used[4]      ; node:router7_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level1_used[4]      ; node:router3_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router4_inst|router:router_inst|buffer_level1_used[4]      ; node:router4_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level1_used[4]      ; node:router2_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level1_used[3]      ; node:router1_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level1_used[3]      ; node:router3_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level1_used[1]     ; node:router10_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level1_used[2]      ; node:router3_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[2]   ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router9_inst|router:router_inst|buffer_level1_used[2]      ; node:router9_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level1_used[3]      ; node:router8_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level1_used[1]      ; node:router7_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level1_used[3]      ; node:router5_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level1_used[2]      ; node:router1_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level2_used[0]     ; node:router12_inst|router:router_inst|buffer_level2_used[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[0]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router9_inst|router:router_inst|buffer_level1_used[0]      ; node:router9_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level1_used[3]      ; node:router7_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router4_inst|router:router_inst|buffer_level1_used[3]      ; node:router4_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level1_used[1]     ; node:router12_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level1_used[2]      ; node:router5_inst|router:router_inst|buffer_level1_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level1_used[1]      ; node:router8_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level1_used[3]      ; node:router2_inst|router:router_inst|buffer_level1_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level1_used[4]      ; node:router1_inst|router:router_inst|buffer_level1_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level1_used[2]   ; node:uart_slave_inst|router:router_inst|buffer_level1_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level1_used[1]      ; node:router5_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level1_used[1]      ; node:router3_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level1_used[1]      ; node:router6_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router4_inst|router:router_inst|buffer_level1_used[1]      ; node:router4_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:node_master_inst|router:router_inst|buffer_level1_used[2]  ; node:node_master_inst|router:router_inst|buffer_level1_used[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router9_inst|router:router_inst|buffer_level1_used[1]      ; node:router9_inst|router:router_inst|buffer_level1_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router_slave_inst|router:router_inst|buffer_level1_used[1] ; node:router_slave_inst|router:router_inst|buffer_level1_used[1] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:node_master_inst|router:router_inst|buffer_level1_used[3]  ; node:node_master_inst|router:router_inst|buffer_level1_used[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1|f                      ; sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1|f                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level2_used[0]      ; node:router2_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level1_used[0]      ; node:router5_inst|router:router_inst|buffer_level1_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:node_master_inst|router:router_inst|buffer_level1_used[0]  ; node:node_master_inst|router:router_inst|buffer_level1_used[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router11_inst|router:router_inst|buffer_level1_used[1]     ; node:router11_inst|router:router_inst|buffer_level1_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level2_used[4]     ; node:router12_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level2_used[4]      ; node:router8_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level2_used[2]     ; node:router10_inst|router:router_inst|buffer_level2_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router11_inst|router:router_inst|buffer_level2_used[4]     ; node:router11_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[1]   ; node:mem2_slave_inst|router:router_inst|buffer_level1_used[1]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level2_used[2]      ; node:router7_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router11_inst|router:router_inst|buffer_level2_used[2]     ; node:router11_inst|router:router_inst|buffer_level2_used[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level2_used[0]      ; node:router6_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router_slave_inst|router:router_inst|buffer_level2_used[0] ; node:router_slave_inst|router:router_inst|buffer_level2_used[0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[4]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[4]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level2_used[4]      ; node:router6_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level2_used[4]     ; node:router10_inst|router:router_inst|buffer_level2_used[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router_slave_inst|router:router_inst|buffer_level2_used[4] ; node:router_slave_inst|router:router_inst|buffer_level2_used[4] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level2_used[2]      ; node:router6_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level2_used[4]      ; node:router7_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router_slave_inst|router:router_inst|buffer_level2_used[2] ; node:router_slave_inst|router:router_inst|buffer_level2_used[2] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level2_used[4]      ; node:router3_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router4_inst|router:router_inst|buffer_level2_used[4]      ; node:router4_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level2_used[4]      ; node:router2_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level2_used[3]      ; node:router1_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level2_used[3]      ; node:router3_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router10_inst|router:router_inst|buffer_level2_used[1]     ; node:router10_inst|router:router_inst|buffer_level2_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level2_used[3]      ; node:router6_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level2_used[2]      ; node:router3_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[2]   ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router9_inst|router:router_inst|buffer_level2_used[2]      ; node:router9_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level2_used[3]      ; node:router8_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level2_used[1]      ; node:router7_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[3]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level2_used[3]      ; node:router5_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level2_used[2]      ; node:router1_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[0]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router9_inst|router:router_inst|buffer_level2_used[0]      ; node:router9_inst|router:router_inst|buffer_level2_used[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router7_inst|router:router_inst|buffer_level2_used[3]      ; node:router7_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router4_inst|router:router_inst|buffer_level2_used[3]      ; node:router4_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router12_inst|router:router_inst|buffer_level2_used[1]     ; node:router12_inst|router:router_inst|buffer_level2_used[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level2_used[2]      ; node:router5_inst|router:router_inst|buffer_level2_used[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router8_inst|router:router_inst|buffer_level2_used[1]      ; node:router8_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router2_inst|router:router_inst|buffer_level2_used[3]      ; node:router2_inst|router:router_inst|buffer_level2_used[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router1_inst|router:router_inst|buffer_level2_used[4]      ; node:router1_inst|router:router_inst|buffer_level2_used[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:uart_slave_inst|router:router_inst|buffer_level2_used[2]   ; node:uart_slave_inst|router:router_inst|buffer_level2_used[2]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[3]   ; node:mem2_slave_inst|router:router_inst|buffer_level2_used[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router5_inst|router:router_inst|buffer_level2_used[1]      ; node:router5_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router3_inst|router:router_inst|buffer_level2_used[1]      ; node:router3_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; node:router6_inst|router:router_inst|buffer_level2_used[1]      ; node:router6_inst|router:router_inst|buffer_level2_used[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
++-------+-----------------------------------------------------------------+-----------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                                    ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                  ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[0]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[0]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[10]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[10]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[11]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[11]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[12]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[12]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[13]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[13]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[14]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[14]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[15]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[15]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[16]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[16]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[17]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[17]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[18]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[18]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[19]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[19]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[1]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[1]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[20]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[20]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[21]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[21]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[22]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[22]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[23]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[23]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[24]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[24]                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[2]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[2]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[3]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[3]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[4]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[4]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[5]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[5]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[6]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[6]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[7]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[7]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[8]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[8]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; clock_counter[9]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; clock_counter[9]                                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; current_counter[0]                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; current_counter[0]                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[0]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[1]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[2]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[3]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[4]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[5]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[6]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|rd_data[7]           ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|read_return          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|read_return          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][7] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[0][7] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst|register_array[1][6] ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; nreset       ; clk        ; 4.483 ; 4.483 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; 2.814 ; 2.814 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; 2.440 ; 2.440 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; 2.453 ; 2.453 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; 2.664 ; 2.664 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; 2.458 ; 2.458 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; 2.643 ; 2.643 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; 2.714 ; 2.714 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; 2.814 ; 2.814 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; 2.722 ; 2.722 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; nreset       ; clk        ; -1.980 ; -1.980 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; -2.320 ; -2.320 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; -2.320 ; -2.320 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; -2.333 ; -2.333 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; -2.544 ; -2.544 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; -2.338 ; -2.338 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; -2.523 ; -2.523 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; -2.594 ; -2.594 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; -2.694 ; -2.694 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; -2.602 ; -2.602 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 5.148 ; 5.148 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.773 ; 4.773 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.920 ; 4.920 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 5.034 ; 5.034 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.973 ; 4.973 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.987 ; 4.987 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 5.062 ; 5.062 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 5.148 ; 5.148 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.776 ; 4.776 ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 6.324 ; 6.324 ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 5.362 ; 5.362 ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 6.113 ; 6.113 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 5.252 ; 5.252 ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 5.581 ; 5.581 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 5.210 ; 5.210 ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 6.324 ; 6.324 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 5.090 ; 5.090 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 4.773 ; 4.773 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.773 ; 4.773 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.920 ; 4.920 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 5.034 ; 5.034 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.973 ; 4.973 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.987 ; 4.987 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 5.062 ; 5.062 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 5.148 ; 5.148 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.776 ; 4.776 ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 5.362 ; 5.362 ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 6.113 ; 6.113 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 5.252 ; 5.252 ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 5.581 ; 5.581 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 5.210 ; 5.210 ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 6.324 ; 6.324 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 5.090 ; 5.090 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++-------------+--------------+-------+----+----+-------+
+; Input Port  ; Output Port  ; RR    ; RF ; FR ; FF    ;
++-------------+--------------+-------+----+----+-------+
+; switches[0] ; test_ledr[0] ; 5.697 ;    ;    ; 5.697 ;
+; switches[1] ; test_ledr[1] ; 5.755 ;    ;    ; 5.755 ;
+; switches[2] ; test_ledr[2] ; 5.827 ;    ;    ; 5.827 ;
+; switches[3] ; test_ledr[3] ; 5.802 ;    ;    ; 5.802 ;
+; switches[4] ; test_ledr[4] ; 6.369 ;    ;    ; 6.369 ;
+; switches[5] ; test_ledr[5] ; 6.378 ;    ;    ; 6.378 ;
+; switches[6] ; test_ledr[6] ; 5.795 ;    ;    ; 5.795 ;
+; switches[7] ; test_ledr[7] ; 5.803 ;    ;    ; 5.803 ;
++-------------+--------------+-------+----+----+-------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++-------------+--------------+-------+----+----+-------+
+; Input Port  ; Output Port  ; RR    ; RF ; FR ; FF    ;
++-------------+--------------+-------+----+----+-------+
+; switches[0] ; test_ledr[0] ; 5.697 ;    ;    ; 5.697 ;
+; switches[1] ; test_ledr[1] ; 5.755 ;    ;    ; 5.755 ;
+; switches[2] ; test_ledr[2] ; 5.827 ;    ;    ; 5.827 ;
+; switches[3] ; test_ledr[3] ; 5.802 ;    ;    ; 5.802 ;
+; switches[4] ; test_ledr[4] ; 6.369 ;    ;    ; 6.369 ;
+; switches[5] ; test_ledr[5] ; 6.378 ;    ;    ; 6.378 ;
+; switches[6] ; test_ledr[6] ; 5.795 ;    ;    ; 5.795 ;
+; switches[7] ; test_ledr[7] ; 5.803 ;    ;    ; 5.803 ;
++-------------+--------------+-------+----+----+-------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+------------+-------+----------+---------+---------------------+
+; Clock            ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+------------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -11.300    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -11.300    ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -46285.28  ; 0.0   ; 0.0      ; 0.0     ; -7797.38            ;
+;  clk             ; -46285.280 ; 0.000 ; N/A      ; N/A     ; -7797.380           ;
++------------------+------------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; nreset       ; clk        ; 8.750 ; 8.750 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; 5.166 ; 5.166 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; 4.444 ; 4.444 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; 4.456 ; 4.456 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; 4.860 ; 4.860 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; 4.466 ; 4.466 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; 4.831 ; 4.831 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; 4.936 ; 4.936 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; 5.166 ; 5.166 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; 4.924 ; 4.924 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; nreset       ; clk        ; -1.980 ; -1.980 ; Rise       ; clk             ;
+; switches[*]  ; clk        ; -2.320 ; -2.320 ; Rise       ; clk             ;
+;  switches[0] ; clk        ; -2.320 ; -2.320 ; Rise       ; clk             ;
+;  switches[1] ; clk        ; -2.333 ; -2.333 ; Rise       ; clk             ;
+;  switches[2] ; clk        ; -2.544 ; -2.544 ; Rise       ; clk             ;
+;  switches[3] ; clk        ; -2.338 ; -2.338 ; Rise       ; clk             ;
+;  switches[4] ; clk        ; -2.523 ; -2.523 ; Rise       ; clk             ;
+;  switches[5] ; clk        ; -2.594 ; -2.594 ; Rise       ; clk             ;
+;  switches[6] ; clk        ; -2.694 ; -2.694 ; Rise       ; clk             ;
+;  switches[7] ; clk        ; -2.602 ; -2.602 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; led[*]    ; clk        ; 9.414  ; 9.414  ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 8.635  ; 8.635  ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 8.927  ; 8.927  ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 9.166  ; 9.166  ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 8.954  ; 8.954  ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 9.090  ; 9.090  ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 9.210  ; 9.210  ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 9.414  ; 9.414  ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 8.516  ; 8.516  ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 11.815 ; 11.815 ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 9.736  ; 9.736  ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 9.483  ; 9.483  ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 8.345  ; 8.345  ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 11.813 ; 11.813 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 9.622  ; 9.622  ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 10.477 ; 10.477 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 9.517  ; 9.517  ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 11.815 ; 11.815 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 9.353  ; 9.353  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; led[*]    ; clk        ; 4.773 ; 4.773 ; Rise       ; clk             ;
+;  led[0]   ; clk        ; 4.773 ; 4.773 ; Rise       ; clk             ;
+;  led[1]   ; clk        ; 4.920 ; 4.920 ; Rise       ; clk             ;
+;  led[2]   ; clk        ; 5.034 ; 5.034 ; Rise       ; clk             ;
+;  led[3]   ; clk        ; 4.973 ; 4.973 ; Rise       ; clk             ;
+;  led[4]   ; clk        ; 4.987 ; 4.987 ; Rise       ; clk             ;
+;  led[5]   ; clk        ; 5.062 ; 5.062 ; Rise       ; clk             ;
+;  led[6]   ; clk        ; 5.148 ; 5.148 ; Rise       ; clk             ;
+;  led[7]   ; clk        ; 4.776 ; 4.776 ; Rise       ; clk             ;
+; ledg[*]   ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+;  ledg[0]  ; clk        ; 5.362 ; 5.362 ; Rise       ; clk             ;
+;  ledg[1]  ; clk        ; 5.165 ; 5.165 ; Rise       ; clk             ;
+;  ledg[2]  ; clk        ; 4.669 ; 4.669 ; Rise       ; clk             ;
+;  ledg[3]  ; clk        ; 6.113 ; 6.113 ; Rise       ; clk             ;
+;  ledg[4]  ; clk        ; 5.252 ; 5.252 ; Rise       ; clk             ;
+;  ledg[5]  ; clk        ; 5.581 ; 5.581 ; Rise       ; clk             ;
+;  ledg[6]  ; clk        ; 5.210 ; 5.210 ; Rise       ; clk             ;
+;  ledg[7]  ; clk        ; 6.324 ; 6.324 ; Rise       ; clk             ;
+; uart_txd  ; clk        ; 5.090 ; 5.090 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------+
+; Progagation Delay                                      ;
++-------------+--------------+--------+----+----+--------+
+; Input Port  ; Output Port  ; RR     ; RF ; FR ; FF     ;
++-------------+--------------+--------+----+----+--------+
+; switches[0] ; test_ledr[0] ; 10.012 ;    ;    ; 10.012 ;
+; switches[1] ; test_ledr[1] ; 10.095 ;    ;    ; 10.095 ;
+; switches[2] ; test_ledr[2] ; 10.267 ;    ;    ; 10.267 ;
+; switches[3] ; test_ledr[3] ; 10.143 ;    ;    ; 10.143 ;
+; switches[4] ; test_ledr[4] ; 11.167 ;    ;    ; 11.167 ;
+; switches[5] ; test_ledr[5] ; 11.202 ;    ;    ; 11.202 ;
+; switches[6] ; test_ledr[6] ; 10.146 ;    ;    ; 10.146 ;
+; switches[7] ; test_ledr[7] ; 10.146 ;    ;    ; 10.146 ;
++-------------+--------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Progagation Delay                            ;
++-------------+--------------+-------+----+----+-------+
+; Input Port  ; Output Port  ; RR    ; RF ; FR ; FF    ;
++-------------+--------------+-------+----+----+-------+
+; switches[0] ; test_ledr[0] ; 5.697 ;    ;    ; 5.697 ;
+; switches[1] ; test_ledr[1] ; 5.755 ;    ;    ; 5.755 ;
+; switches[2] ; test_ledr[2] ; 5.827 ;    ;    ; 5.827 ;
+; switches[3] ; test_ledr[3] ; 5.802 ;    ;    ; 5.802 ;
+; switches[4] ; test_ledr[4] ; 6.369 ;    ;    ; 6.369 ;
+; switches[5] ; test_ledr[5] ; 6.378 ;    ;    ; 6.378 ;
+; switches[6] ; test_ledr[6] ; 5.795 ;    ;    ; 5.795 ;
+; switches[7] ; test_ledr[7] ; 5.803 ;    ;    ; 5.803 ;
++-------------+--------------+-------+----+----+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 6469644  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 6469644  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 4482  ; 4482 ;
+; Unconstrained Output Ports      ; 25    ; 25   ;
+; Unconstrained Output Port Paths ; 25    ; 25   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri May 04 12:21:01 2012
+Info: Command: quartus_sta NOC -c NOC
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'NOC.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -11.300
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -11.300    -46285.280 clk 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -7797.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (306004): Started post-fitting delay annotation
+Warning (306006): Found 25 output pins without output pin load capacitance assignment
+    Info (306007): Pin "led[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "led[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "ledg[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "uart_txd" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "test_ledr[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+Info (306005): Delay annotation completed successfully
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.626
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.626    -17300.781 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380     -7797.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 416 megabytes
+    Info: Processing ended: Fri May 04 12:21:53 2012
+    Info: Elapsed time: 00:00:52
+    Info: Total CPU time (on all processors): 00:00:40
+
+

@@ -1,0 +1,4555 @@
+Quartus II 32-bit
+Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+14
+1383
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+sc_uart
+# storage
+db|NOC.(51).cnf
+db|NOC.(51).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|sc_uart.vhd
+3838e3de420ac98197494d8a828951
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_bits
+1
+PARAMETER_SIGNED_DEC
+USR
+clk_freq
+50000000
+PARAMETER_SIGNED_DEC
+USR
+baud_rate
+115200
+PARAMETER_SIGNED_DEC
+USR
+txf_depth
+128
+PARAMETER_SIGNED_DEC
+USR
+txf_thres
+64
+PARAMETER_SIGNED_DEC
+USR
+rxf_depth
+128
+PARAMETER_SIGNED_DEC
+USR
+rxf_thres
+64
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address)
+0 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdy_cnt)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2
+}
+# macro_sequence
+
+# end
+# entity
+fifo
+# storage
+db|NOC.(52).cnf
+db|NOC.(52).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|fifo.vhd
+97f88a2add3b68432bff4abf9df7b939
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+8
+PARAMETER_SIGNED_DEC
+USR
+depth
+128
+PARAMETER_SIGNED_DEC
+USR
+thres
+64
+PARAMETER_SIGNED_DEC
+USR
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2|fifo:tf
+sc_uart:uart2|fifo:rf
+}
+# macro_sequence
+
+# end
+# entity
+fifo_elem
+# storage
+db|NOC.(53).cnf
+db|NOC.(53).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|fifo.vhd
+97f88a2add3b68432bff4abf9df7b939
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:2:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:3:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:4:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:5:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:6:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:7:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:8:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:9:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:10:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:11:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:12:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:13:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:14:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:15:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:16:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:17:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:18:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:19:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:20:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:21:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:22:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:23:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:24:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:25:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:26:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:27:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:28:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:29:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:30:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:31:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:32:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:33:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:34:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:35:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:36:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:37:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:38:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:39:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:40:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:41:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:42:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:43:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:44:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:45:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:46:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:47:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:48:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:49:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:50:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:51:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:52:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:53:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:54:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:55:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:56:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:57:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:58:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:59:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:60:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:61:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:62:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:63:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:64:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:65:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:66:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:67:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:68:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:69:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:70:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:71:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:72:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:73:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:74:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:75:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:76:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:77:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:78:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:79:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:80:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:81:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:82:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:83:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:84:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:85:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:86:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:87:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:88:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:89:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:90:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:91:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:92:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:93:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:94:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:95:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:96:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:97:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:98:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:99:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:100:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:101:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:102:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:103:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:104:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:105:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:106:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:107:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:108:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:109:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:110:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:111:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:112:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:113:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:114:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:115:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:116:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:117:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:118:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:119:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:120:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:121:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:122:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:123:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:124:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:125:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:126:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:127:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:0:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:1:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:2:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:3:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:4:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:5:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:6:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:7:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:8:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:9:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:10:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:11:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:12:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:13:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:14:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:15:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:16:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:17:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:18:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:19:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:20:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:21:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:22:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:23:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:24:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:25:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:26:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:27:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:28:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:29:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:30:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:31:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:32:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:33:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:34:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:35:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:36:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:37:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:38:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:39:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:40:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:41:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:42:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:43:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:44:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:45:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:46:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:47:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:48:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:49:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:50:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:51:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:52:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:53:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:54:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:55:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:56:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:57:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:58:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:59:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:60:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:61:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:62:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:63:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:64:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:65:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:66:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:67:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:68:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:69:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:70:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:71:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:72:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:73:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:74:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:75:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:76:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:77:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:78:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:79:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:80:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:81:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:82:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:83:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:84:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:85:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:86:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:87:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:88:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:89:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:90:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:91:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:92:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:93:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:94:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:95:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:96:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:97:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:98:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:99:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:100:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:101:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:102:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:103:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:104:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:105:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:106:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:107:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:108:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:109:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:110:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:111:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:112:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:113:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:114:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:115:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:116:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:117:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:118:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:119:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:120:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:121:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:122:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:123:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:124:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:125:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:126:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:127:f1
+}
+# macro_sequence
+
+# end
+# entity
+noc
+# storage
+db|NOC.(0).cnf
+db|NOC.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|noc.vhdl
+1a4e2a5423023c8871e5a5f25599f68
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(1).cnf
+db|NOC.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+0
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:node_master_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(2).cnf
+db|NOC.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:node_master_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_proc
+# storage
+db|NOC.(3).cnf
+db|NOC.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_proc.vhdl
+99bafa78f886c883e7896133c5112a47
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dest_addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:node_master_inst|dummy_proc:\gen_dummy_master:dummy_proc_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_master
+# storage
+db|NOC.(4).cnf
+db|NOC.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_master.vhd
+1675969b81e332a1b54386cfc5418
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0000
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:node_master_inst|na_master:\gen_dummy_master:na_master_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(5).cnf
+db|NOC.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+1
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:uart_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(6).cnf
+db|NOC.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:uart_slave_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_slave
+# storage
+db|NOC.(7).cnf
+db|NOC.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_slave.vhdl
+308fd0ae3ccb7afef6f374d3b0bb4571
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:uart_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_slave
+# storage
+db|NOC.(8).cnf
+db|NOC.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_slave.vhd
+1e1b987b1a89a510f4a3f3aa3a117f51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0001
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:uart_slave_inst|na_slave:\gen_dummy_slave:na_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(9).cnf
+db|NOC.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+0
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(10).cnf
+db|NOC.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router_slave_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_proc
+# storage
+db|NOC.(11).cnf
+db|NOC.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_proc.vhdl
+99bafa78f886c883e7896133c5112a47
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dest_addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router_slave_inst|dummy_proc:\gen_dummy_master:dummy_proc_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_master
+# storage
+db|NOC.(12).cnf
+db|NOC.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_master.vhd
+1675969b81e332a1b54386cfc5418
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0101
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router_slave_inst|na_master:\gen_dummy_master:na_master_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(13).cnf
+db|NOC.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+1
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:mem2_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(14).cnf
+db|NOC.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:mem2_slave_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_slave
+# storage
+db|NOC.(15).cnf
+db|NOC.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_slave.vhdl
+308fd0ae3ccb7afef6f374d3b0bb4571
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:mem2_slave_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_slave
+# storage
+db|NOC.(16).cnf
+db|NOC.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_slave.vhd
+1e1b987b1a89a510f4a3f3aa3a117f51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:mem2_slave_inst|na_slave:\gen_dummy_slave:na_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(17).cnf
+db|NOC.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0010
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router1_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(18).cnf
+db|NOC.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0010
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router1_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(19).cnf
+db|NOC.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+1
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router2_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(20).cnf
+db|NOC.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router2_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_slave
+# storage
+db|NOC.(21).cnf
+db|NOC.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_slave.vhdl
+308fd0ae3ccb7afef6f374d3b0bb4571
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router2_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_slave
+# storage
+db|NOC.(22).cnf
+db|NOC.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_slave.vhd
+1e1b987b1a89a510f4a3f3aa3a117f51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0011
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router2_inst|na_slave:\gen_dummy_slave:na_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(23).cnf
+db|NOC.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0110
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router3_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(24).cnf
+db|NOC.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0110
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router3_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(25).cnf
+db|NOC.(25).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+0111
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router4_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(26).cnf
+db|NOC.(26).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+0111
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router4_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(27).cnf
+db|NOC.(27).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+0
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+3
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router5_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(28).cnf
+db|NOC.(28).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router5_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_proc
+# storage
+db|NOC.(29).cnf
+db|NOC.(29).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_proc.vhdl
+99bafa78f886c883e7896133c5112a47
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+3
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dest_addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router5_inst|dummy_proc:\gen_dummy_master:dummy_proc_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_master
+# storage
+db|NOC.(30).cnf
+db|NOC.(30).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_master.vhd
+1675969b81e332a1b54386cfc5418
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1000
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router5_inst|na_master:\gen_dummy_master:na_master_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(31).cnf
+db|NOC.(31).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+0
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+2
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router6_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(32).cnf
+db|NOC.(32).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router6_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_proc
+# storage
+db|NOC.(33).cnf
+db|NOC.(33).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_proc.vhdl
+99bafa78f886c883e7896133c5112a47
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+2
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(dest_addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router6_inst|dummy_proc:\gen_dummy_master:dummy_proc_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_master
+# storage
+db|NOC.(34).cnf
+db|NOC.(34).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_master.vhd
+1675969b81e332a1b54386cfc5418
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1001
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router6_inst|na_master:\gen_dummy_master:na_master_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(35).cnf
+db|NOC.(35).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1010
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router7_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(36).cnf
+db|NOC.(36).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1010
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router7_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(37).cnf
+db|NOC.(37).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1011
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router8_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(38).cnf
+db|NOC.(38).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1011
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router8_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(39).cnf
+db|NOC.(39).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+4
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router9_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(40).cnf
+db|NOC.(40).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router9_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+switches
+# storage
+db|NOC.(41).cnf
+db|NOC.(41).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|switches.vhd
+8016b2d9bb72d8574d1a80bf3a4b34
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router9_inst|switches:\gen_switches:switches_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_slave
+# storage
+db|NOC.(42).cnf
+db|NOC.(42).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_slave.vhd
+1e1b987b1a89a510f4a3f3aa3a117f51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1100
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router9_inst|na_slave:\gen_switches:na_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(43).cnf
+db|NOC.(43).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1101
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router10_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(44).cnf
+db|NOC.(44).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1101
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router10_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(45).cnf
+db|NOC.(45).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+3
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1110
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router11_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(46).cnf
+db|NOC.(46).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1110
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router11_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+node
+# storage
+db|NOC.(47).cnf
+db|NOC.(47).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|node.vhd
+6395ddfeabb43cded6eac177dd1c26d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_type
+1
+PARAMETER_SIGNED_DEC
+USR
+node_id
+1111
+PARAMETER_UNSIGNED_BIN
+USR
+proc_type
+1
+PARAMETER_SIGNED_DEC
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 1
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(test_leds)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(switches_in)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router12_inst
+}
+# macro_sequence
+
+# end
+# entity
+router
+# storage
+db|NOC.(48).cnf
+db|NOC.(48).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|router.vhd
+c836452329cde7ab81c232fdf15c6a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1111
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_in)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(busy_out)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(local_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(north_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(east_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(south_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(west_pkt_out)
+48 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router12_inst|router:router_inst
+}
+# macro_sequence
+
+# end
+# entity
+dummy_slave
+# storage
+db|NOC.(49).cnf
+db|NOC.(49).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|dummy_slave.vhdl
+308fd0ae3ccb7afef6f374d3b0bb4571
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1111
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(led_output)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router12_inst|dummy_slave:\gen_dummy_slave:dummy_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+na_slave
+# storage
+db|NOC.(50).cnf
+db|NOC.(50).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|na_slave.vhd
+1e1b987b1a89a510f4a3f3aa3a117f51
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+node_id
+1111
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(node_id)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_in)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(packet_data_out)
+48 downto 0
+PARAMETER_STRING
+USR
+ constraint(read_data)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(address)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(write_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+node:router12_inst|na_slave:\gen_dummy_slave:na_slave_inst
+}
+# macro_sequence
+
+# end
+# complete
+

@@ -1,0 +1,27 @@
+Quartus II Archive log --	C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC_archive.qarlog
+
+Archive:	C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC_archive.qar
+Date:		Fri May 04 12:36:11 2012
+Quartus II 32-bit		11.1 Build 259 01/25/2012 SP 2 SJ Web Edition
+
+	=========== Files Selected: ===========
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC.qpf
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC.qsf
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC_assignment_defaults.qdf
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/incremental_db/compiled_partitions/NOC.db_info
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/dummy_proc.vhdl
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/dummy_slave.vhdl
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/fifo.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/na_master.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/na_slave.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/noc.vhdl
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/node.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/router.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/sc_uart.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/switches.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/vhdl_files/uart1.vhd
+C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC/NOC.dpf
+	======= Total: 16 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

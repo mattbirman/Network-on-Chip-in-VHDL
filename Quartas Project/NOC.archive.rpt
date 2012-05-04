@@ -1,0 +1,88 @@
+Archive Project report for NOC
+Fri May 04 12:36:12 2012
+Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Fri May 04 12:36:12 2012 ;
+; Revision Name          ; NOC                                   ;
+; Top-level Entity Name  ; noc                                   ;
+; Family                 ; Cyclone II                            ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC - Copy/NOC_archive.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'NOC.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/program_files/altera/quartus_11/11_1sp2/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 32-bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 222 megabytes
+    Info: Processing ended: Fri May 04 12:36:12 2012
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++---------------------------------------------------------------------------+
+; Files Archived                                                            ;
++---------------------------------------------------------------------------+
+; File Name                                                                 ;
++---------------------------------------------------------------------------+
+; C:/Users/Graeme/Desktop/UNI FILES/02211 Computer Architecture/NOC/NOC.dpf ;
+; incremental_db/compiled_partitions/NOC.db_info                            ;
+; NOC.qpf                                                                   ;
+; NOC.qsf                                                                   ;
+; NOC_assignment_defaults.qdf                                               ;
+; vhdl_files/dummy_proc.vhdl                                                ;
+; vhdl_files/dummy_slave.vhdl                                               ;
+; vhdl_files/fifo.vhd                                                       ;
+; vhdl_files/na_master.vhd                                                  ;
+; vhdl_files/na_slave.vhd                                                   ;
+; vhdl_files/noc.vhdl                                                       ;
+; vhdl_files/node.vhd                                                       ;
+; vhdl_files/router.vhd                                                     ;
+; vhdl_files/sc_uart.vhd                                                    ;
+; vhdl_files/switches.vhd                                                   ;
+; vhdl_files/uart1.vhd                                                      ;
++---------------------------------------------------------------------------+
+
+
