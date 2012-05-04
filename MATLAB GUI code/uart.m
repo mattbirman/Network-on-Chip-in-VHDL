@@ -23,22 +23,15 @@ while(1)
     
     %next character
     character = fgets(s);
-    
-    
-    %disp(i);
-     %disp(character);
-%     disp(length(character));
 
      if(length(character) == 128)
-          disp(character);
-        %fprintf('max = %i',max(cast(out,'int8')));
-        %disp('new data');
+         % disp(character);
         if(first_time == 1)
             first_time = 0;
-        	[NS,EW,NS_busy,EW_busy,local_busy_in] = draw(count,character);
+        	[NS,EW,NS_busy,EW_busy,local_busy_in,blinking] = draw(count,character);
             count = count + 1;
         else
-             draw(count,character,NS,EW,NS_busy,EW_busy,local_busy_in);
+             draw(count,character,NS,EW,NS_busy,EW_busy,local_busy_in,blinking);
              count = count + 1;
         end
     else

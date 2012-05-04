@@ -1,9 +1,9 @@
 
 %draw(0,120*rand(96,1));
 
-function [NS,EW,NS_busy, EW_busy, local_busy_in] = draw(count,x,NS,EW,NS_busy, EW_busy, local_busy_in)
+function [NS,EW,NS_busy, EW_busy, local_busy_in, blinking] = draw(count,x,NS,EW,NS_busy, EW_busy, local_busy_in,blinking)
 
-t = cputime; 
+%t = cputime; 
 
     name{1,1} = {'0000','proc'};
     name{2,1} = {'0001','mem'};
@@ -55,19 +55,19 @@ t = cputime;
             
        x(49:128) = min(floor((x(49:128)+2)/4)+2,9); %busys
 
-disp('constants and colours'); e = cputime-t
+%disp('constants and colours'); e = cputime-t
 
         if(nargin > 2)
         %have already drawn the figure
         
-t = cputime;
+%t = cputime;
 
-            draw2(x,NS,EW,facecolor,scale,NS_busy,EW_busy,local_busy_in,name)
+            draw2(x,NS,EW,facecolor,scale,NS_busy,EW_busy,local_busy_in,name,blinking,count)
 
-disp('draw not first'); e = cputime-t       
+%disp('draw not first'); e = cputime-t       
         else
         %have not drawn figure yet
-t = cputime;      
+%t = cputime;      
             %char_text = text(scale*40,-scale*5,num2str(x));
             
             for i = 1:4         %x
@@ -119,27 +119,29 @@ t = cputime;
             
             
             %toggle blinking rectangle
-            rectangle('Position',[25*scale,-15*scale,1*scale,1*scale],'FaceColor',mod(count,2)*[0.8,0.8,0.8]+[0.1,0.1,0.1]);
+            blinking = rectangle('Position',[25*scale,-15*scale,1*scale,1*scale],'FaceColor',mod(count,2)*[0.8,0.8,0.8]+[0.1,0.1,0.1]);
             
             
             
             hold off
-disp('draw first'); e = cputime-t            
+%disp('draw first'); e = cputime-t            
         end        
     else
         length(x)
     end
-t = cputime;
+%t = cputime;
     drawnow;
-disp('drawnow'); e = cputime-t
+%disp('drawnow'); e = cputime-t
 
 end
 
-function draw2(x,NS,EW,facecolor,scale, NS_busy,EW_busy,local_busy_in,name)
+function draw2(x,NS,EW,facecolor,scale, NS_busy,EW_busy,local_busy_in,name, blinking,count)
 
 hold on
     %set(char_text,'Text',num2str(x));
 
+    set(blinking,'FaceColor',mod(count,2)*[0.8,0.8,0.8]+[0.1,0.1,0.1]);
+    
     for i = 1:4         %x
         for j = 1:4     %y
             set(local_busy_in(i,j),'FaceColor',facecolor(x(1+2*((j-1)+4*(i-1))+96),:));
