@@ -1,0 +1,93 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity na_master is
+
+port (
+	clk					: in std_logic;
+	nreset				: in std_logic;
+	data_in_enable 		: in std_logic;
+	data_in 			: in std_logic_vector(15 downto 0);
+	destination_address : in std_logic_vector(15 downto 0);
+	source_address		: in std_logic_vector(15 downto 0);
+	data_out_enable 	: out std_logic;
+	data_out 			: out std_logic_vector(63 downto 0);
+	
+	
+	ready_to_receive 	: out std_logic;					-- 1 when NA is ready to receive new data
+	ready_to_send		: in std_logic 						-- 1 when router is ready to receive
+);
+end na_node_to_network;
+
+
+
+architecture rtl of na_node_to_network is
+	
+	-- state machine signals
+	type state_type is (WAIT_FOR_MASTER_STATE, WAIT_FOR_ROUTER_STATE, SENDING_STATE);
+	signal state_reg: state_type;
+	signal next_state: state_type;
+	
+
+begin
+	
+	--state register
+		process(clk, nreset)
+		begin
+			if nreset = '0' then
+				state_reg<= WAIT_FOR_MASTER_STATE;
+			elsif rising_edge(clk) then
+				state_reg<= next_state;
+			end if;
+		end process;
+		
+		--next state logic
+		process(state_reg, data_in_en, ready_to_send) begin
+			next_state <= state_reg;
+			case state_reg is
+				when WAIT_FOR_MASTER_STATE =>
+					if data_in_en = '0'
+						next_state <= WAIT_FOR_MASTER_STATE;
+					elsif ready_to_send = '0'
+						next_state <= WAIT_FOR_ROUTER_STATE;
+					else
+						next_state <= SENDING_STATE;
+					end if;
+				when WAIT_FOR_ROUTER_STATE =>
+					if ready_to_send = '1'
+						next_state <= SENDING_STATE;
+					else
+						next_state <= WAIT_FOR_ROUTER_STATE;
+					end if;
+				when SENDING_STATE =>
+					next_state <= WAIT_FOR_MASTER_STATE;
+				
+			end case;
+		end process;
+	
+		
+		--output of state machine
+		process(state_reg) begin
+			case state_reg is
+				when WAIT_FOR_MASTER_STATE =>
+					data_out_en = '0';
+					ready_to_receive = '1';
+				when WAIT_FOR_ROUTER_STATE =>
+					data_out_en = '0';
+					ready_to_receive = '0';
+				when SENDING_STATE =>
+					data_out_en = '1';
+					ready_to_receive = '0';
+					data_out(15 downto 0) <= destination_address;
+					data_out(31 downto 16) <= source_address;
+					data_out(47 downto 32) <= x"0000";
+					data_out(63 downto 48) <= data_in;
+			end case;
+		end process;
+		
+
+	
+	
+	
+end rtl;

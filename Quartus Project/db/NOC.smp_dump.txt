@@ -1,0 +1,12 @@
+
+State Machine - |noc|state_reg
+Name state_reg.DELAY_STATE state_reg.WRITE_STATE state_reg.POLL_STATE 
+state_reg.POLL_STATE 0 0 0 
+state_reg.WRITE_STATE 0 1 1 
+state_reg.DELAY_STATE 1 0 1 
+
+State Machine - |noc|sc_uart:uart2|uart_rx_state
+Name uart_rx_state.s2 uart_rx_state.s1 uart_rx_state.s0 
+uart_rx_state.s0 0 0 0 
+uart_rx_state.s1 0 1 1 
+uart_rx_state.s2 1 0 1 
