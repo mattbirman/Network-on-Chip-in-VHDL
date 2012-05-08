@@ -179,10 +179,10 @@ hold on
     for i = 1:4         %x
         for j = 1:3     %y
             %if(get(NS_busy(j,i,1) ~= facecolor(x(1+2*((j-1)+3*(i-1))+48),:)))
-                set(NS_busy(j,i,1),'FaceColor',facecolor(x(1+2*((j-1)+3*(i-1))+48),:));
+                set(NS_busy(j,i,1),'FaceColor',facecolor(x(1+2*((j-1)+3*(i-1))+1+48),:));
             %end
             %if(get(NS_busy(j,i,2) ~= facecolor(x(1+2*((j-1)+3*(i-1))+1+48),:)))
-                set(NS_busy(j,i,2),'FaceColor',facecolor(x(1+2*((j-1)+3*(i-1))+1+48),:));
+                set(NS_busy(j,i,2),'FaceColor',facecolor(x(1+2*((j-1)+3*(i-1))+48),:));
             %end
         end
     end

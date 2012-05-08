@@ -22,434 +22,6 @@ VHSM_ON
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-sc_uart
-# storage
-db|NOC.(51).cnf
-db|NOC.(51).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-vhdl_files|sc_uart.vhd
-3838e3de420ac98197494d8a828951
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-addr_bits
-1
-PARAMETER_SIGNED_DEC
-USR
-clk_freq
-50000000
-PARAMETER_SIGNED_DEC
-USR
-baud_rate
-115200
-PARAMETER_SIGNED_DEC
-USR
-txf_depth
-128
-PARAMETER_SIGNED_DEC
-USR
-txf_thres
-64
-PARAMETER_SIGNED_DEC
-USR
-rxf_depth
-128
-PARAMETER_SIGNED_DEC
-USR
-rxf_thres
-64
-PARAMETER_SIGNED_DEC
-USR
- constraint(address)
-0 downto 0
-PARAMETER_STRING
-USR
- constraint(wr_data)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(rd_data)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(rdy_cnt)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-sc_uart:uart2
-}
-# macro_sequence
-
-# end
-# entity
-fifo
-# storage
-db|NOC.(52).cnf
-db|NOC.(52).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-vhdl_files|fifo.vhd
-97f88a2add3b68432bff4abf9df7b939
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-width
-8
-PARAMETER_SIGNED_DEC
-USR
-depth
-128
-PARAMETER_SIGNED_DEC
-USR
-thres
-64
-PARAMETER_SIGNED_DEC
-USR
- constraint(din)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(dout)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-sc_uart:uart2|fifo:tf
-sc_uart:uart2|fifo:rf
-}
-# macro_sequence
-
-# end
-# entity
-fifo_elem
-# storage
-db|NOC.(53).cnf
-db|NOC.(53).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-vhdl_files|fifo.vhd
-97f88a2add3b68432bff4abf9df7b939
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-width
-8
-PARAMETER_SIGNED_DEC
-USR
- constraint(din)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(dout)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:2:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:3:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:4:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:5:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:6:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:7:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:8:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:9:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:10:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:11:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:12:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:13:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:14:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:15:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:16:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:17:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:18:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:19:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:20:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:21:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:22:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:23:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:24:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:25:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:26:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:27:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:28:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:29:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:30:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:31:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:32:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:33:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:34:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:35:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:36:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:37:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:38:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:39:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:40:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:41:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:42:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:43:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:44:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:45:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:46:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:47:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:48:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:49:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:50:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:51:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:52:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:53:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:54:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:55:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:56:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:57:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:58:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:59:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:60:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:61:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:62:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:63:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:64:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:65:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:66:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:67:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:68:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:69:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:70:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:71:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:72:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:73:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:74:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:75:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:76:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:77:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:78:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:79:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:80:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:81:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:82:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:83:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:84:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:85:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:86:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:87:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:88:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:89:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:90:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:91:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:92:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:93:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:94:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:95:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:96:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:97:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:98:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:99:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:100:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:101:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:102:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:103:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:104:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:105:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:106:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:107:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:108:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:109:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:110:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:111:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:112:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:113:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:114:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:115:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:116:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:117:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:118:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:119:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:120:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:121:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:122:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:123:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:124:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:125:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:126:f1
-sc_uart:uart2|fifo:tf|fifo_elem:\g1:127:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:0:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:1:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:2:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:3:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:4:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:5:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:6:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:7:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:8:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:9:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:10:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:11:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:12:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:13:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:14:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:15:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:16:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:17:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:18:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:19:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:20:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:21:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:22:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:23:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:24:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:25:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:26:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:27:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:28:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:29:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:30:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:31:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:32:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:33:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:34:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:35:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:36:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:37:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:38:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:39:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:40:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:41:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:42:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:43:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:44:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:45:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:46:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:47:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:48:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:49:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:50:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:51:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:52:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:53:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:54:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:55:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:56:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:57:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:58:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:59:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:60:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:61:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:62:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:63:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:64:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:65:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:66:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:67:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:68:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:69:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:70:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:71:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:72:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:73:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:74:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:75:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:76:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:77:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:78:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:79:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:80:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:81:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:82:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:83:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:84:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:85:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:86:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:87:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:88:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:89:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:90:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:91:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:92:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:93:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:94:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:95:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:96:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:97:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:98:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:99:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:100:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:101:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:102:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:103:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:104:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:105:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:106:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:107:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:108:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:109:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:110:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:111:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:112:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:113:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:114:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:115:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:116:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:117:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:118:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:119:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:120:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:121:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:122:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:123:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:124:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:125:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:126:f1
-sc_uart:uart2|fifo:rf|fifo_elem:\g1:127:f1
-}
-# macro_sequence
-
-# end
-# entity
 noc
 # storage
 db|NOC.(0).cnf
@@ -4547,6 +4119,434 @@ USR
 }
 # hierarchies {
 node:router12_inst|na_slave:\gen_dummy_slave:na_slave_inst
+}
+# macro_sequence
+
+# end
+# entity
+sc_uart
+# storage
+db|NOC.(51).cnf
+db|NOC.(51).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|sc_uart.vhd
+3838e3de420ac98197494d8a828951
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_bits
+1
+PARAMETER_SIGNED_DEC
+USR
+clk_freq
+50000000
+PARAMETER_SIGNED_DEC
+USR
+baud_rate
+115200
+PARAMETER_SIGNED_DEC
+USR
+txf_depth
+128
+PARAMETER_SIGNED_DEC
+USR
+txf_thres
+64
+PARAMETER_SIGNED_DEC
+USR
+rxf_depth
+128
+PARAMETER_SIGNED_DEC
+USR
+rxf_thres
+64
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address)
+0 downto 0
+PARAMETER_STRING
+USR
+ constraint(wr_data)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(rd_data)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdy_cnt)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2
+}
+# macro_sequence
+
+# end
+# entity
+fifo
+# storage
+db|NOC.(52).cnf
+db|NOC.(52).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|fifo.vhd
+99c166b64ea881b8351013eb55dd3528
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+8
+PARAMETER_SIGNED_DEC
+USR
+depth
+128
+PARAMETER_SIGNED_DEC
+USR
+thres
+64
+PARAMETER_SIGNED_DEC
+USR
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2|fifo:tf
+sc_uart:uart2|fifo:rf
+}
+# macro_sequence
+
+# end
+# entity
+fifo_elem
+# storage
+db|NOC.(53).cnf
+db|NOC.(53).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+vhdl_files|fifo.vhd
+99c166b64ea881b8351013eb55dd3528
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+width
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dout)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:0:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:1:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:2:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:3:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:4:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:5:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:6:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:7:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:8:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:9:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:10:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:11:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:12:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:13:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:14:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:15:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:16:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:17:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:18:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:19:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:20:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:21:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:22:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:23:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:24:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:25:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:26:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:27:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:28:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:29:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:30:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:31:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:32:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:33:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:34:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:35:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:36:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:37:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:38:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:39:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:40:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:41:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:42:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:43:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:44:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:45:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:46:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:47:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:48:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:49:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:50:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:51:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:52:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:53:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:54:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:55:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:56:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:57:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:58:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:59:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:60:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:61:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:62:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:63:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:64:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:65:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:66:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:67:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:68:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:69:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:70:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:71:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:72:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:73:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:74:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:75:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:76:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:77:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:78:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:79:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:80:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:81:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:82:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:83:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:84:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:85:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:86:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:87:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:88:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:89:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:90:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:91:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:92:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:93:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:94:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:95:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:96:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:97:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:98:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:99:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:100:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:101:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:102:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:103:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:104:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:105:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:106:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:107:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:108:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:109:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:110:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:111:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:112:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:113:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:114:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:115:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:116:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:117:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:118:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:119:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:120:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:121:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:122:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:123:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:124:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:125:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:126:f1
+sc_uart:uart2|fifo:tf|fifo_elem:\g1:127:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:0:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:1:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:2:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:3:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:4:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:5:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:6:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:7:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:8:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:9:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:10:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:11:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:12:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:13:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:14:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:15:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:16:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:17:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:18:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:19:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:20:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:21:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:22:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:23:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:24:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:25:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:26:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:27:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:28:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:29:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:30:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:31:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:32:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:33:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:34:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:35:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:36:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:37:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:38:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:39:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:40:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:41:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:42:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:43:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:44:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:45:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:46:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:47:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:48:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:49:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:50:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:51:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:52:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:53:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:54:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:55:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:56:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:57:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:58:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:59:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:60:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:61:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:62:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:63:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:64:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:65:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:66:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:67:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:68:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:69:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:70:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:71:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:72:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:73:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:74:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:75:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:76:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:77:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:78:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:79:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:80:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:81:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:82:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:83:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:84:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:85:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:86:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:87:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:88:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:89:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:90:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:91:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:92:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:93:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:94:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:95:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:96:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:97:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:98:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:99:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:100:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:101:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:102:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:103:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:104:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:105:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:106:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:107:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:108:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:109:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:110:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:111:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:112:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:113:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:114:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:115:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:116:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:117:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:118:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:119:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:120:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:121:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:122:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:123:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:124:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:125:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:126:f1
+sc_uart:uart2|fifo:rf|fifo_elem:\g1:127:f1
 }
 # macro_sequence
 

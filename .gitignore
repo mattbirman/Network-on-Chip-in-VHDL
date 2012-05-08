@@ -1,3 +1,12 @@
 .DS_Store
 */*.asv
 */*.bak
+*.rpt
+*.sof
+*.summary
+*.done
+*.jdi
+*.pin
+*.pof
+/Quartus Project/incremental_db
+/Quartus Project/db
